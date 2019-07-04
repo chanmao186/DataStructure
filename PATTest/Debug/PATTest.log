@@ -1,2 +1,18 @@
-﻿  Maximum Subsequence Sum.cpp
-E:\Study\CPlusPlus\PATTest\Maximum Subsequence Sum.cpp(8): error C2144: 语法错误:“int”的前面应有“;”
+﻿  Card.cpp
+E:\Study\CPlusPlus\PAT\DataStructure\PATTest\Card.cpp(258): warning C4101: “result”: 未引用的局部变量
+  Maximum Subsequence Sum.cpp
+  TreeCommonStruct.cpp
+  TreeLeave.cpp
+  二分查找.cpp
+  最大子列和.cpp
+  链表的合并的合并.cpp
+  正在生成代码...
+  LINK : 没有找到 E:\Study\CPlusPlus\PAT\DataStructure\PATTest\Debug\PATTest.exe 或上一个增量链接没有生成它；正在执行完全链接
+Card.obj : error LNK2005: _main 已经在 02-线性结构2 一元多项式的乘法与加法运算.obj 中定义
+Maximum Subsequence Sum.obj : error LNK2005: _main 已经在 02-线性结构2 一元多项式的乘法与加法运算.obj 中定义
+TreeCommonStruct.obj : error LNK2005: _main 已经在 02-线性结构2 一元多项式的乘法与加法运算.obj 中定义
+TreeLeave.obj : error LNK2005: _main 已经在 02-线性结构2 一元多项式的乘法与加法运算.obj 中定义
+二分查找.obj : error LNK2005: _main 已经在 02-线性结构2 一元多项式的乘法与加法运算.obj 中定义
+链表的合并的合并.obj : error LNK2005: _main 已经在 02-线性结构2 一元多项式的乘法与加法运算.obj 中定义
+最大子列和.obj : error LNK2005: _main 已经在 02-线性结构2 一元多项式的乘法与加法运算.obj 中定义
+E:\Study\CPlusPlus\PAT\DataStructure\PATTest\Debug\PATTest.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

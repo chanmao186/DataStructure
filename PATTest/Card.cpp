@@ -253,91 +253,91 @@ PlayingCard Deck::DealOne()
 	}
 	return m_cardarray[nLastDelt++];
 }
-//int main()
-//{
-//	int bet,result;
-//	string check;
-//	srand((unsigned)time(NULL)); // Seeds GetRandInt
-//	char a[80] = "欢迎来到扑克牌游戏";
-//	CenterText(a);
-//	cout << endl << '\n';
-//	//char ans;
-//	Deck deck_1;//定义一副牌对象
-//	//询问玩家是否玩牌，若是，才有以下操作，否则程序结束
-//	//52张牌只够玩13次，之后应该重新洗牌
-//	cout << "重新洗牌……" << endl;
-//	deck_1.MakeDeck();//乱序生成一副牌
-//	//将玩家实体化
-//	CardPlayer player(100);
-//	CardPlayer computer(1000000);
-//
-//	deck_1.ShowDeck(); //显示整副牌，此行为调试用，玩游戏时不能看到整副牌
-//	pause();//暂停，按任意键继续
-//	
-//	do {
-//		//玩家下盲注
-//		cout << "请下注:" << endl;
-//		cin >> bet;	
-//		//防止数组过大
-//		while (bet > player.GetMoney()) {
-//			cout << "您输入的数值超过了剩余钱数，请重新下注:" << endl;
-//			cin >> bet;
-//		}
-//		player.SetBet(bet);
-//		//给两个玩家各发两张牌
-//		player.GetCard(deck_1);
-//		
-//		computer.GetCard(deck_1);
-//		//显示玩家的牌，询问是否加注
-//		cout << "您的牌为:";
-//		player.DisplayCard();
-//		if (player.GetMoney() == 0) {
-//			cout << "您的钱数为0，跳过加注环节" << endl;
-//		}
-//		else {
-//			cout << "  是否加注(Y/S)" << endl;
-//			cin >> check;
-//			if (check == "Y" || check == "y") {
-//				cout << "请输入加注的数量" << endl;
-//				cin >> bet;
-//				//询问玩家是否要增加赌注，当下注资金超过现有资金，报错，重新下注
-//				while (bet > player.GetMoney()) {
-//					cout << "您输入的数值超过了剩余钱数，请重新下注:" << endl;
-//					cin >> bet;
-//				}
-//				player.AddBet(bet);
-//			}
-//		}	
-//		//显示玩家和计算机的牌
-//		cout << "电脑的牌为:";
-//		computer.DisplayCard();
-//		//比较玩家和计算机牌的大小
-//		//输出本次牌的比较结果
-//		switch (Compare(player, computer)) {
-//		case 0 :
-//				player.Lose();
-//				break;
-//		case 1:
-//			player.Win();
-//			break;
-//		case 2:
-//			player.Draw();
-//			break;
-//		}
-//		//显示目前为止，胜、负、平局次数及玩家现有总资金数
-//		cout << "您当前的成绩为:" << endl;
-//		player.Show();	
-//		if (player.GetMoney() == 0) {
-//			cout << "您的钱数为0，游戏结束" << endl;
-//			break;
-//		}
-//		cout << "是否继续(Y/S)" << endl;
-//		cin >> check;
-//	} while (check=="Y"||check=="y");
-//	cout << "\n请按任意键退出程序……" << endl;//玩家选择不玩游戏后，结束程序
-//	getch();
-//	return 1;
-//}
+int main()
+{
+	int bet,result;
+	string check;
+	srand((unsigned)time(NULL)); // Seeds GetRandInt
+	char a[80] = "欢迎来到扑克牌游戏";
+	CenterText(a);
+	cout << endl << '\n';
+	//char ans;
+	Deck deck_1;//定义一副牌对象
+	//询问玩家是否玩牌，若是，才有以下操作，否则程序结束
+	//52张牌只够玩13次，之后应该重新洗牌
+	cout << "重新洗牌……" << endl;
+	deck_1.MakeDeck();//乱序生成一副牌
+	//将玩家实体化
+	CardPlayer player(100);
+	CardPlayer computer(1000000);
+
+	deck_1.ShowDeck(); //显示整副牌，此行为调试用，玩游戏时不能看到整副牌
+	pause();//暂停，按任意键继续
+	
+	do {
+		//玩家下盲注
+		cout << "请下注:" << endl;
+		cin >> bet;	
+		//防止数组过大
+		while (bet > player.GetMoney()) {
+			cout << "您输入的数值超过了剩余钱数，请重新下注:" << endl;
+			cin >> bet;
+		}
+		player.SetBet(bet);
+		//给两个玩家各发两张牌
+		player.GetCard(deck_1);
+		
+		computer.GetCard(deck_1);
+		//显示玩家的牌，询问是否加注
+		cout << "您的牌为:";
+		player.DisplayCard();
+		if (player.GetMoney() == 0) {
+			cout << "您的钱数为0，跳过加注环节" << endl;
+		}
+		else {
+			cout << "  是否加注(Y/S)" << endl;
+			cin >> check;
+			if (check == "Y" || check == "y") {
+				cout << "请输入加注的数量" << endl;
+				cin >> bet;
+				//询问玩家是否要增加赌注，当下注资金超过现有资金，报错，重新下注
+				while (bet > player.GetMoney()) {
+					cout << "您输入的数值超过了剩余钱数，请重新下注:" << endl;
+					cin >> bet;
+				}
+				player.AddBet(bet);
+			}
+		}	
+		//显示玩家和计算机的牌
+		cout << "电脑的牌为:";
+		computer.DisplayCard();
+		//比较玩家和计算机牌的大小
+		//输出本次牌的比较结果
+		switch (Compare(player, computer)) {
+		case 0 :
+				player.Lose();
+				break;
+		case 1:
+			player.Win();
+			break;
+		case 2:
+			player.Draw();
+			break;
+		}
+		//显示目前为止，胜、负、平局次数及玩家现有总资金数
+		cout << "您当前的成绩为:" << endl;
+		player.Show();	
+		if (player.GetMoney() == 0) {
+			cout << "您的钱数为0，游戏结束" << endl;
+			break;
+		}
+		cout << "是否继续(Y/S)" << endl;
+		cin >> check;
+	} while (check=="Y"||check=="y");
+	cout << "\n请按任意键退出程序……" << endl;//玩家选择不玩游戏后，结束程序
+	getch();
+	return 1;
+}
 
 char pause()
 {

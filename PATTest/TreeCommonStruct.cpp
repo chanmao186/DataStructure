@@ -58,12 +58,12 @@ bool ismorphic(TreeIndex R1, TreeIndex R2) {
 		return 	ismorphic(t1.Left, t2.Right) && ismorphic(t1.Right, t2.Left);
 	}
 }
-//int main() {
-//	TreeIndex r1, r2;
-//	r1 = BuildTree(T1);
-//	r2 = BuildTree(T2);
-//	if (ismorphic(r1, r2))
-//		cout << "Yes" << endl;
-//	else cout << "No" << endl;
-//	return 0;
-//}
+int main() {
+	TreeIndex r1, r2;
+	r1 = BuildTree(T1);
+	r2 = BuildTree(T2);
+	if (ismorphic(r1, r2))
+		cout << "Yes" << endl;
+	else cout << "No" << endl;
+	return 0;
+}

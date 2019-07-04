@@ -15,19 +15,19 @@ struct LNode {
 List ReadInput(); /* 裁判实现，细节不表。元素从下标1开始存储 */
 Position BinarySearch(List L, ElementType X);
 
-//int main()
-//{
-//	List L;
-//	ElementType X;
-//	Position P;
-//
-//	L = ReadInput();
-//	scanf("%d", &X);
-//	P = BinarySearch(L, X);
-//	printf("%d\n", P);
-//
-//	return 0;
-//}
+int main()
+{
+	List L;
+	ElementType X;
+	Position P;
+
+	L = ReadInput();
+	scanf("%d", &X);
+	P = BinarySearch(L, X);
+	printf("%d\n", P);
+
+	return 0;
+}
 
 List ReadInput() {
 	List L = (List)malloc(sizeof(LNode));

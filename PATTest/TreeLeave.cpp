@@ -71,10 +71,10 @@ void Display(int root) {
 		}
 	}
 }
-//int main() {
-//	int n,root;
-//	cin >> n;
-//	root = Input(n);
-//	Display(root);
-//	return 0;
-//}
+int main() {
+	int n,root;
+	cin >> n;
+	root = Input(n);
+	Display(root);
+	return 0;
+}
