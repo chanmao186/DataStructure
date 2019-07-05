@@ -45,5 +45,8 @@
     <ClCompile Include="02-线性结构2 一元多项式的乘法与加法运算.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ReversingLinkedList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
