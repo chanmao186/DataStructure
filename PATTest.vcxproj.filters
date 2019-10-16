@@ -57,5 +57,8 @@
     <ClCompile Include="03_2ListLeaves.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="G:\课程作业\算法分析\第二次实验课\矩阵连乘.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
