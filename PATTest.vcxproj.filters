@@ -60,5 +60,20 @@
     <ClCompile Include="G:\课程作业\算法分析\第二次实验课\矩阵连乘.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0-1背包.动态规划.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PATTest\算法设计与分析\分治\全排列问题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PATTest\算法设计与分析\分治\大整数的乘法.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PATTest\算法设计与分析\分治\棋盘覆盖.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PATTest\算法设计与分析\动态规划\矩阵连乘.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
