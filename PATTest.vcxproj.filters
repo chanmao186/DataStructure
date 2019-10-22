@@ -75,5 +75,8 @@
     <ClCompile Include="PATTest\算法设计与分析\动态规划\矩阵连乘.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PATTest\算法设计与分析\动态规划\0-1背包.动态规划.new.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
