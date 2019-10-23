@@ -42,43 +42,46 @@
     <ClCompile Include="PATTest\最大子列和.cpp">
       <Filter>源文件\算法分析</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\二分查找.cpp">
+    <ClCompile Include="PATTest\PAT\03_1树的同构.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\二叉树操作集.cpp">
+    <ClCompile Include="PATTest\PAT\03_2ListLeaves.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\算法设计与分析\分治\大整数的乘法.cpp">
+    <ClCompile Include="PATTest\PAT\Card.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\TreeLeave.cpp">
+    <ClCompile Include="PATTest\PAT\Maximum Subsequence Sum.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\TreeCommonStruct.cpp">
+    <ClCompile Include="PATTest\PAT\PopSequence.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\Sort.cpp">
+    <ClCompile Include="PATTest\PAT\ReversingLinkedList.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\ReversingLinkedList.cpp">
+    <ClCompile Include="PATTest\PAT\Sort.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\PopSequence.cpp">
+    <ClCompile Include="PATTest\PAT\TreeCommonStruct.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\Maximum Subsequence Sum.cpp">
+    <ClCompile Include="PATTest\PAT\TreeLeave.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\Card.cpp">
+    <ClCompile Include="PATTest\PAT\二叉树操作集.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\03_2ListLeaves.cpp">
+    <ClCompile Include="PATTest\PAT\二分查找.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\03_1树的同构.cpp">
+    <ClCompile Include="PATTest\PAT\链表的合并的合并.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\02-线性结构2 一元多项式的乘法与加法运算.cpp">
+    <ClCompile Include="PATTest\PAT\最大子列和.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATTest\PAT\02-线性结构2 一元多项式的乘法与加法运算.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
   </ItemGroup>
