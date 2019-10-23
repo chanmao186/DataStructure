@@ -6,7 +6,7 @@ using namespace std;
 #define W 20
 
 typedef MNode* M;
-struct MNode{
+struct MNode {
 	int weight;
 	int value;
 	M Next;
@@ -17,7 +17,7 @@ struct MNode{
 Weight 重量
 Value 价值
 */
-M CreateM(int Weight,  int Value) {
+M CreateM(int Weight, int Value) {
 	M m = (M)malloc(sizeof(MNode));
 	m->Weight = Weight;
 	m->Value = Value;
@@ -31,42 +31,53 @@ c记录了背包的承重
 n记录物品总数的整数
 m记录最优解的二维数组
 */
-void Knapsack(int* v, int* w, int c, int n,M m[]) {
+void Knapsack(int* v, int* w, int c, int n, M m[]) {
 
 	//根据元素个数获取最后一个数的下表
-	int index = n - 1, i = index-1, j = 0, temp = 0,value,weight;
-	M cm,nm,tm,_tm;
-	tm=CreateM(0,0);
+	int index = n - 1, i = index - 1, j = 0, temp = 0, value, weight;
+	M cm, nm, tm, _tm,_tm1;
+	tm = CreateM(0, 0);
 	//求取当前能承重的最大重量，防止单个物品重量超过背包的最大容量
 	if (w[index] <= c) {
 		m[index]->Next = CreateM(w[index], v[index]);
 	}
-	for (i=index-1; i >= 0; i--) {
+	for (i = index - 1; i >= 0; i--) {
 		//构造出一个临时的tm链表，tm为头部
-		tm->Next=_tm;
+		tm->Next = _tm;
 		nm = m[i + 1];
-		weight = w[i]+nm->Weight;
-		while(weight<=c){
-			vulue = v[i]+nm->Value;
-			_tm->Next=CreateM(weight,value);
-			nm=nm->Next;
+		weight = w[i] + nm->Weight;
+		while (weight <= c) {
+			value = v[i] + nm->Value;
+			_tm->Next = CreateM(weight, value);
+			nm = nm->Next;
 			//当后一位链表的底部时跳出循环
-			if(!nm)break;
-			weight = w[i]+nm->Weight;
+			if (!nm)break;
+			weight = w[i] + nm->Weight;
 			_tm->_tm->Next;
 		}
 		//进行链表合并
-		_tm=tm->Next;
-		nm=nm->Next;
-		cm=m[i];
-		while(_tm&&nm){
-			if(_tm->Weight>nm->Weight){
-			cm->Next=_tm;
-		    cm=_tm;
-			_tm=_tm->Next;
-			cm->Next=NULL;			
-			}else{
-			
+		_tm = tm->Next;
+		nm = nm->Next;
+		cm = m[i];
+		while (_tm && nm) {
+			if (_tm->Weight < nm->Weight) {
+				if (_tm->Value >= nm->Value) {
+					cm->Next = _tm;
+					cm = _tm;
+					_tm = _tm->Next;
+					cm->Next = NULL;
+				}
+				else {
+					//释放无效的内存
+					_tm1 = _tm;
+					_tm = _tm->Next;
+					free(_tm1);
+				}				
+			}
+			else if (_tm->Weight > nm->Weight) {
+				cm->Next = CreateM(nm->Weight, nm->Value);
+				cm = cm->Next;
+				nm = nm->Next;
 			}
 		}
 	}
@@ -107,8 +118,8 @@ int main() {
 	int n, c;
 
 	M m[N];
-	for (int i=0; i < N; i++) {
-		m[i]= CreateM(0,0);
+	for (int i = 0; i < N; i++) {
+		m[i] = CreateM(0, 0);
 	}
 
 	cout << "请输入背包的容量：" << endl;
