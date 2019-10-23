@@ -20,27 +20,28 @@ void Knapsack(int* v, int* w, int c, int n, int m[N][W]) {
 	//求取当前能承重的最大重量，防止单个物品重量超过背包的最大容量
 	int JMax = min(w[index], c);
 	//给最后一列赋初始值
-	for (; i < JMax; i++) {
+	for (; i <= JMax; i++) {
 		m[index][i] = 0;
 	}
-	for (i = JMax; i < c; i++) {
+	for (i = JMax + 1; i < c; i++) {
 		m[index][i] = v[index];
 	}
 
 	//开始进行计算
 	for (i = index - 1; i >= 0; i--) {
 		//求取当前能承重的最大重量，防止单个物品重量超过背包的最大容量
-		int JMax = min(w[index], c);
-		for (j = 0; j < JMax; j++) {
+		JMax = min(w[i], c);
+		for (j = 0; j <= c; j++) {
 			m[i][j] = m[i + 1][j];
 		}
-		for (j = JMax; j < c; j++) {
+		for (j = JMax + 1; j <= c; j++) {
 			temp = v[i] + m[i + 1][j - w[i]];
-			if (m[i][j] > temp) {
+			if (m[i][j] < temp) {
 				m[i][j] = temp;
 			}
 		}
 	}
+	int a = 0;
 }
 
 
@@ -51,7 +52,7 @@ c背包容量
 n物品总数
 x最优解数组
 */
-void Traceback(int m[N][W],int *w,int c,int n,int *x) {
+void Traceback(int m[N][W], int* w, int c, int n, int* x) {
 	int index = n - 1;
 	for (int i = 0; i < index; i++) {
 		if (m[i][c] == m[i + 1][c]) {
@@ -76,18 +77,19 @@ int main() {
 	int w[W] = { 0 };
 	int v[N] = { 0 };
 	int m[N][W] = { 0 };
-	int n,c;
+	int n, c;
 	cout << "请输入背包的容量：" << endl;
 	cin >> c;
 	cout << "请输入物品的个数：" << endl;
 	cin >> n;
-	
+
 	cout << "请按顺序输入每个物品的重量：" << endl;
 	Input(n, w);
 	cout << "请按顺序输入每个物品的价值：" << endl;
 	Input(n, v);
 	Knapsack(v, w, c, n, m);
-	cout << "能放物品的最大价值为:" << m[n - 1][c - 1] << endl;
+	Traceback(m, w, c, n, x);
+	cout << "能放物品的最大价值为:" << m[0][c] << endl;
 	cout << "放入的方案为:" << endl;
 	for (int i = 0; i < n; i++) {
 		cout << x[i] << " ";
