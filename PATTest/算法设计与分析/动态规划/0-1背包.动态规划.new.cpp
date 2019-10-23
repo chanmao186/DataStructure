@@ -13,9 +13,9 @@ struct MNode{
 };
 
 /*
-´´½¨Ò»¸öÔªËØm
-Weight ÖØÁ¿
-Value ¼ÛÖµ
+åˆ›å»ºä¸€ä¸ªå…ƒç´ m
+Weight é‡é‡
+Value ä»·å€¼
 */
 M CreateM(int Weight,  int Value) {
 	M m = (M)malloc(sizeof(MNode));
@@ -25,48 +25,60 @@ M CreateM(int Weight,  int Value) {
 	return m;
 }
 /**
-v¼ÇÂ¼¼ÛÖµµÄÊı×é
-w¼ÇÂ¼ÖØÁ¿µÄÊı×é
-c¼ÇÂ¼ÁË±³°üµÄ³ĞÖØ
-n¼ÇÂ¼ÎïÆ·×ÜÊıµÄÕûÊı
-m¼ÇÂ¼×îÓÅ½âµÄ¶şÎ¬Êı×é
+vè®°å½•ä»·å€¼çš„æ•°ç»„
+wè®°å½•é‡é‡çš„æ•°ç»„
+cè®°å½•äº†èƒŒåŒ…çš„æ‰¿é‡
+nè®°å½•ç‰©å“æ€»æ•°çš„æ•´æ•°
+mè®°å½•æœ€ä¼˜è§£çš„äºŒç»´æ•°ç»„
 */
 void Knapsack(int* v, int* w, int c, int n,M m[]) {
 
-	//¸ù¾İÔªËØ¸öÊı»ñÈ¡×îºóÒ»¸öÊıµÄÏÂ±í
-	int index = n - 1, i = index-1, j = 0, temp = 0;
-	M cm,nm,tm;
-	//ÇóÈ¡µ±Ç°ÄÜ³ĞÖØµÄ×î´óÖØÁ¿£¬·ÀÖ¹µ¥¸öÎïÆ·ÖØÁ¿³¬¹ı±³°üµÄ×î´óÈİÁ¿
+	//æ ¹æ®å…ƒç´ ä¸ªæ•°è·å–æœ€åä¸€ä¸ªæ•°çš„ä¸‹è¡¨
+	int index = n - 1, i = index-1, j = 0, temp = 0,value,weight;
+	M cm,nm,tm,_tm;
+	tm=CreateM(0,0);
+	//æ±‚å–å½“å‰èƒ½æ‰¿é‡çš„æœ€å¤§é‡é‡ï¼Œé˜²æ­¢å•ä¸ªç‰©å“é‡é‡è¶…è¿‡èƒŒåŒ…çš„æœ€å¤§å®¹é‡
 	if (w[index] <= c) {
 		m[index]->Next = CreateM(w[index], v[index]);
 	}
-	for (; i >= 0; i--) {
-		nm = m[i + 1]->Next;
-		if (w[i] > c) {
-			while (nm)
-			{
-				cm->Next = CreateM(nm->Weight, nm->Value);
-				cm = cm->Next;
-				nm = nm->Next;
+	for (i=index-1; i >= 0; i--) {
+		//æ„é€ å‡ºä¸€ä¸ªä¸´æ—¶çš„tmé“¾è¡¨ï¼Œtmä¸ºå¤´éƒ¨
+		tm->Next=_tm;
+		nm = m[i + 1];
+		weight = w[i]+nm->Weight;
+		while(weight<=c){
+			vulue = v[i]+nm->Value;
+			_tm->Next=CreateM(weight,value);
+			nm=nm->Next;
+			//å½“åä¸€ä½é“¾è¡¨çš„åº•éƒ¨æ—¶è·³å‡ºå¾ªç¯
+			if(!nm)break;
+			weight = w[i]+nm->Weight;
+			_tm->_tm->Next;
+		}
+		//è¿›è¡Œé“¾è¡¨åˆå¹¶
+		_tm=tm->Next;
+		nm=nm->Next;
+		cm=m[i];
+		while(_tm&&nm){
+			if(_tm->Weight>nm->Weight){
+			cm->Next=_tm;
+		    cm=_tm;
+			_tm=_tm->Next;
+			cm->Next=NULL;			
+			}else{
+			
 			}
 		}
-		else {
-			if (nm != NULL) {
-
-			}
-		}
-		
 	}
-
 }
 
 
 /*
-m´æ´¢×î´ó¼ÛÖµµÄ¶şÎ¬Êı×é
-w´æ´¢ÖØÁ¿µÄÊı×é
-c±³°üÈİÁ¿
-nÎïÆ·×ÜÊı
-x×îÓÅ½âÊı×é
+må­˜å‚¨æœ€å¤§ä»·å€¼çš„äºŒç»´æ•°ç»„
+wå­˜å‚¨é‡é‡çš„æ•°ç»„
+cèƒŒåŒ…å®¹é‡
+nç‰©å“æ€»æ•°
+xæœ€ä¼˜è§£æ•°ç»„
 */
 void Traceback(int m[N][W], int* w, int c, int n, int* x) {
 	int index = n - 1;
@@ -79,7 +91,7 @@ void Traceback(int m[N][W], int* w, int c, int n, int* x) {
 			c -= w[i];
 		}
 	}
-	//Çó×îºóÒ»Î»µÄÖµ
+	//æ±‚æœ€åä¸€ä½çš„å€¼
 	x[index] = (m[index][c]) ? 1 : 0;
 }
 void Input(int n, int* array) {
@@ -99,25 +111,25 @@ int main() {
 		m[i]= CreateM(0,0);
 	}
 
-	cout << "ÇëÊäÈë±³°üµÄÈİÁ¿£º" << endl;
+	cout << "è¯·è¾“å…¥èƒŒåŒ…çš„å®¹é‡ï¼š" << endl;
 	cin >> c;
-	cout << "ÇëÊäÈëÎïÆ·µÄ¸öÊı£º" << endl;
+	cout << "è¯·è¾“å…¥ç‰©å“çš„ä¸ªæ•°ï¼š" << endl;
 	cin >> n;
 
-	cout << "Çë°´Ë³ĞòÊäÈëÃ¿¸öÎïÆ·µÄÖØÁ¿£º" << endl;
+	cout << "è¯·æŒ‰é¡ºåºè¾“å…¥æ¯ä¸ªç‰©å“çš„é‡é‡ï¼š" << endl;
 	Input(n, w);
-	cout << "Çë°´Ë³ĞòÊäÈëÃ¿¸öÎïÆ·µÄ¼ÛÖµ£º" << endl;
+	cout << "è¯·æŒ‰é¡ºåºè¾“å…¥æ¯ä¸ªç‰©å“çš„ä»·å€¼ï¼š" << endl;
 	Input(n, v);
-	
-	cout << "ÄÜ·ÅÎïÆ·µÄ×î´ó¼ÛÖµÎª:" << m[0][c] << endl;
-	cout << "·ÅÈëµÄ·½°¸Îª:" << endl;
+
+	cout << "èƒ½æ”¾ç‰©å“çš„æœ€å¤§ä»·å€¼ä¸º:" << m[0][c] << endl;
+	cout << "æ”¾å…¥çš„æ–¹æ¡ˆä¸º:" << endl;
 	for (int i = 0; i < n; i++) {
 		cout << x[i] << " ";
 	}
 	return 0;
 }
 
-/*²âÊÔÊı¾İ
+/*æµ‹è¯•æ•°æ®
 6 2 4 3 5
 3 4 7 5 7
 */
