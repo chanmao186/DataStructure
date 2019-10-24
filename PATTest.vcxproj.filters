@@ -24,9 +24,6 @@
     <ClCompile Include="PATTest\算法设计与分析\动态规划\0-1背包.动态规划.cpp">
       <Filter>源文件\算法分析</Filter>
     </ClCompile>
-    <ClCompile Include="PATTest\算法设计与分析\动态规划\0-1背包.动态规划.new.cpp">
-      <Filter>源文件\算法分析</Filter>
-    </ClCompile>
     <ClCompile Include="PATTest\算法设计与分析\动态规划\矩阵连乘.cpp">
       <Filter>源文件\算法分析</Filter>
     </ClCompile>
@@ -83,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="PATTest\PAT\02-线性结构2 一元多项式的乘法与加法运算.cpp">
       <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATTest\算法设计与分析\动态规划\0-1背包.动态规划.new.cpp">
+      <Filter>源文件\算法分析</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
