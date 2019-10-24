@@ -84,5 +84,13 @@
     <ClCompile Include="PATTest\算法设计与分析\动态规划\0-1背包.动态规划.new.cpp">
       <Filter>源文件\算法分析</Filter>
     </ClCompile>
+    <ClCompile Include="PATTest\算法设计与分析\贪心算法\哈夫曼数.贪心算法.cpp">
+      <Filter>源文件\算法分析</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PATTest\算法设计与分析\公用数据结构\Heap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
