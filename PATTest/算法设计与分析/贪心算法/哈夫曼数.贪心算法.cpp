@@ -85,7 +85,7 @@ BT DeleteInMinHeap(MinHeap h) {
 		temp = h->Date[h->size--];
 	int parent, chlid;
 	parent = 1;
-	for (; parent < h->size; parent = chlid) {
+	for (; parent*2 < h->size; parent = chlid) {
 		chlid = parent * 2;
 		if (h->Date[chlid + 1]->Weight < h->Date[chlid]->Weight) {
 			chlid++;
@@ -117,6 +117,10 @@ MinHeap BuildMinHeap(string s) {
 		}
 	}
 
+	cout << "各字符出现的次数为:" << endl;
+	for (i = 1; i <= heap->size; i++) {
+		cout << heap->Date[i]->c << "  出现" << heap->Date[i]->Weight <<"次" << endl;
+	}
 	for (i = heap->size / 2; i > 0; i--) {
 		PercDown(heap, i);
 	}
@@ -150,6 +154,7 @@ Huffman CreateHuffman(char s,Huffman hfm) {
 	for (int i = 0; i < hfm->n; i++) {
 		hf->code[i] = hfm->code[i];
 	}	
+	hf->n = hfm->n;
 	hf->s = s;
 	return hf;
 }
@@ -163,14 +168,17 @@ HuffmanArray CreateHuffmanArray(int n) {
 
 void WirteHuffmanArray(BT bt,HuffmanArray hfma,Huffman hfm) {
 	if (!bt)return;
-	if ((!bt->Left)&&(!bt->Right)) {
+	//哈佛曼树的节点的度数为2，所以只要没有左子树就是叶子节点
+	if ((!bt->Left)) {
 		hfma->hfarry[hfma->size++] = CreateHuffman(bt->c, hfm);
+		return;
 	}
+
 	hfm->code[hfm->n++] = '0';
 	WirteHuffmanArray(bt->Left, hfma,hfm);
 	hfm->code[hfm->n - 1] = '1';
 	WirteHuffmanArray(bt->Right, hfma, hfm);
-
+	hfm->n--;
 }
 
 int main(void) {
@@ -184,7 +192,7 @@ int main(void) {
 	BT left, right, temp;
 
 
-	while (heap->size<2)  {
+	while (heap->size>1)  {
 		left = DeleteInMinHeap(heap);
 		right = DeleteInMinHeap(heap);
 		temp = _CreateBT(left->Weight + right->Weight, left, right);
@@ -196,8 +204,12 @@ int main(void) {
 	hfm->n = 0;
 	HuffmanArray hfma = CreateHuffmanArray(N);
 	WirteHuffmanArray(temp, hfma, hfm);
-	for (int i = 0; i < hfma->size; i++) {
-		cout << hfma->hfarry[i]->s << "  " << hfma->hfarry[i]->code << endl;
+	for (int i = 0,j; i < hfma->size; i++) {
+		cout << hfma->hfarry[i]->s << "  ";
+		for(j=0;j< hfma->hfarry[i]->n;j++){
+			cout << hfma->hfarry[i]->code[j];
+		}
+		cout << endl;
 	}
 	return 0;
 }
