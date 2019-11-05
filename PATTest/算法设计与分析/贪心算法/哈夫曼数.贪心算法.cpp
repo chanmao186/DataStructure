@@ -65,12 +65,12 @@ MinHeap CreateMinHeap(int Maxsize) {
 	return H;
 }
 /*
-å‘å°é¡¶å †ä¸­æ’å…¥æ•°æ®
-hè§„å®šçš„å°é¡¶å †
-btè¦æ’å…¥çš„æ ‘èŠ‚ç‚¹
+ÏòĞ¡¶¥¶ÑÖĞ²åÈëÊı¾İ
+h¹æ¶¨µÄĞ¡¶¥¶Ñ
+btÒª²åÈëµÄÊ÷½Úµã
 */
 bool InsertToMinHeap(MinHeap h, BT bt) {
-	//æ£€æµ‹å †æ˜¯å¦å·²æ»¡
+	//¼ì²â¶ÑÊÇ·ñÒÑÂú
 	if (h->size == h->capacity)return false;
 	int i = ++h->size;
 	for (; bt->Weight < h->Date[i / 2]->Weight; i /= 2) {
@@ -99,7 +99,7 @@ BT DeleteInMinHeap(MinHeap h) {
 	return item;
 }
 /*
-æ ¹æ®æä¾›çš„æ•°ç»„å»ºç«‹ä¸€ä¸ªå°é¡¶å †
+¸ù¾İÌá¹©µÄÊı×é½¨Á¢Ò»¸öĞ¡¶¥¶Ñ
 */
 MinHeap BuildMinHeap(string s) {
 	MinHeap heap = CreateMinHeap(Max);
@@ -118,9 +118,9 @@ MinHeap BuildMinHeap(string s) {
 		}
 	}
 
-	cout << "å„å­—ç¬¦å‡ºç°çš„æ¬¡æ•°ä¸º:" << endl;
+	cout << "¸÷×Ö·û³öÏÖµÄ´ÎÊıÎª:" << endl;
 	for (i = 1; i <= heap->size; i++) {
-		cout << heap->Date[i]->c << "  å‡ºç°" << heap->Date[i]->Weight <<"æ¬¡" << endl;
+		cout << heap->Date[i]->c << "  ³öÏÖ" << heap->Date[i]->Weight <<"´Î" << endl;
 	}
 	for (i = heap->size / 2; i > 0; i--) {
 		PercDown(heap, i);
@@ -169,13 +169,14 @@ HuffmanArray CreateHuffmanArray(int n) {
 
 void WirteHuffmanArray(BT bt,HuffmanArray hfma,Huffman hfm) {
 	if (!bt)return;
-	//å“ˆä½›æ›¼æ ‘çš„èŠ‚ç‚¹çš„åº¦æ•°ä¸º2ï¼Œæ‰€ä»¥åªè¦æ²¡æœ‰å·¦å­æ ‘å°±æ˜¯å¶å­èŠ‚ç‚¹
+	//¹ş·ğÂüÊ÷µÄ½ÚµãµÄ¶ÈÊıÎª2£¬ËùÒÔÖ»ÒªÃ»ÓĞ×ó×ÓÊ÷¾ÍÊÇÒ¶×Ó½Úµã
 	if ((!bt->Left)) {
 		hfma->hfarry[hfma->size++] = CreateHuffman(bt->c, hfm);
 		return;
 	}
-
-	hfm->code[hfm->n++] = '0';
+	//±àÂë³¤¶È+1
+	hfm->n++;
+	hfm->code[hfm->n - 1] = '0';
 	WirteHuffmanArray(bt->Left, hfma,hfm);
 	hfm->code[hfm->n - 1] = '1';
 	WirteHuffmanArray(bt->Right, hfma, hfm);
@@ -184,9 +185,9 @@ void WirteHuffmanArray(BT bt,HuffmanArray hfma,Huffman hfm) {
 
 int main(void) {
 	string s;
-	cout << "è¯·è¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²:" << endl;
+	cout << "ÇëÊäÈëÒ»¸ö×Ö·û´®:" << endl;
 	cin >> s;
-	//é˜²æ­¢è¾“å…¥ç©ºæ•°å­—
+	//·ÀÖ¹ÊäÈë¿ÕÊı×Ö
 	if (s.length() <1)return 0;
 
 	MinHeap heap= BuildMinHeap(s);
@@ -200,7 +201,7 @@ int main(void) {
 		InsertToMinHeap(heap, temp);
 	}
 	temp = DeleteInMinHeap(heap);
-
+	//½¨Á¢¹ş·òÂü±àÂë
 	Huffman hfm = (Huffman)malloc(sizeof(HuffmanNode));
 	hfm->n = 0;
 	HuffmanArray hfma = CreateHuffmanArray(N);
