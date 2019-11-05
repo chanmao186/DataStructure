@@ -90,6 +90,9 @@
     <ClCompile Include="PATTest\算法设计与分析\贪心算法\Dijkstra.cpp">
       <Filter>源文件\算法分析</Filter>
     </ClCompile>
+    <ClCompile Include="PATTest\PAT\AVLTree.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PATTest\算法设计与分析\公用数据结构\Heap.h">
