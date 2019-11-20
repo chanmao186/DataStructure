@@ -93,6 +93,9 @@
     <ClCompile Include="..\..\code\算法设计与分析\回溯算法\装载问题.回溯法.迭代.cpp">
       <Filter>源文件\算法分析与设计</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\算法设计与分析\回溯算法\旅行家问题.cpp">
+      <Filter>源文件\算法分析与设计</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">

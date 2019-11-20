@@ -9,17 +9,13 @@ void ChessBoard(int tr,int tc,int dr,int dc,int size);
 int main()
 {
 	int i,j;
-
 	ChessBoard(0,0,1,6,16);
-
 	for(i=0;i<M;i++){
 		for(j=0;j<M;j++){
 			printf("%3d",Board[i][j]);
 		}
 		cout<<endl;
 	}
-
-
 	cin>>i;
 	return 0;
 }
