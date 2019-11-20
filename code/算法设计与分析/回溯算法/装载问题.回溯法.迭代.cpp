@@ -76,17 +76,7 @@ void CopyIntArray(int* a, int* b, int n) {
 		a[i] = b[i];
 	}
 }
-/**
-检测并根据条件选择是否更新最优解
-*/
-int CheckAndUpdateResult(int cw, int BestW, int* a, int* b, int n) {
-	if (cw > BestW) {
-		BestW = cw;
-		CopyIntArray(a, b, n);
-	}
-	return BestW;
 
-}
 /**
 非递归的回溯算法
 w:物品的重量列表
