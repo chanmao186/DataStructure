@@ -4,112 +4,115 @@ using namespace std;
 
 /**
 <<<<<<< HEAD
-ÆúÓÃ
-//ÉùÃ÷ÕûÐÎ¶ÑÕ»
+å¼ƒç”¨
+//å£°æ˜Žæ•´å½¢å †æ ˆ
 class stack {
 public:
-	stack() {
-		n = 0;
-	}
-	int Pop() {
-		if (Empty)
-			return data[--n];
-		else {
-			//¶ÓÁÐÒÑ¿Õ
-			cout << "¶ÓÁÐÒÑ¿Õ" << endl;
-			return 0;
-		}
-
-	}
-	void Push(int num) {
-		if (n == N) {
-			cout << "¶ÓÁÐÒÑÂú" << endl;
-		};
-		data[n++] = num;
-	}
-	bool Empty() {
-		return n;
-	}
+stack() {
+n = 0;
+}
+int Pop() {
+if (Empty)
+return data[--n];
+else {
+//é˜Ÿåˆ—å·²ç©º
+cout << "é˜Ÿåˆ—å·²ç©º" << endl;
+return 0;
+}
+}
+void Push(int num) {
+if (n == N) {
+cout << "é˜Ÿåˆ—å·²æ»¡" << endl;
+};
+data[n++] = num;
+}
+bool Empty() {
+return n;
+}
 private:
-	int n;
-	int data[N];
+int n;
+int data[N];
 };
 */
 
 /**
-ÊÇ·ñÂú×ãÏÞ½çÌõ¼þ,Âú×ãÎªtrue,²»Âú×ãÎªfakse
-cn:µ±Ç°ÔËËãÎïÆ·ÏÂ±ê
-n:ÎïÆ·×ÜÊý
+æ˜¯å¦æ»¡è¶³é™ç•Œæ¡ä»¶,æ»¡è¶³ä¸ºtrue,ä¸æ»¡è¶³ä¸ºfakse
+cn:å½“å‰è¿ç®—ç‰©å“ä¸‹æ ‡
+n:ç‰©å“æ€»æ•°
 */
 bool Bound(int cn, int n) {
-	return cn < n;
+	return cn > n;
 }
 
 /**
-ÊÇ·ñÂú×ãÔ¼ÊøÌõ¼þ£¬Âú×ã·µ»Øtrue,²»Âú×ã·µ»Øfalse
-ÏÞ½çÌõ¼þ:Á½´¬¶¼¿ÉÒÔ×°ÏÂÃ÷È·Òª×°µÄÎïÆ·µÄÖØÁ¿
-cw[0]:Ã÷È··ÖÅä¸ø´¬0µÄÎïÆ·ÖØÁ¿
-cw[1]:Ã÷È··ÖÅä¸ø´¬1µÄÎïÆ·ÖØÁ¿
-c[0]:´¬0µÄÏÞÖØ
-c[1]:´¬1µÄÏÞÖØ
+æ˜¯å¦æ»¡è¶³çº¦æŸæ¡ä»¶ï¼Œæ»¡è¶³è¿”å›žtrue,ä¸æ»¡è¶³è¿”å›žfalse
+é™ç•Œæ¡ä»¶:ä¸¤èˆ¹éƒ½å¯ä»¥è£…ä¸‹æ˜Žç¡®è¦è£…çš„ç‰©å“çš„é‡é‡
+t:å½“å‰æ­£åœ¨è®¡ç®—çš„èŠ‚ç‚¹çš„ä¸‹æ ‡
+nï¼šç‰©å“æ€»æ•°
+cw[0]:æ˜Žç¡®åˆ†é…ç»™èˆ¹0çš„ç‰©å“é‡é‡
+cw[1]:æ˜Žç¡®åˆ†é…ç»™èˆ¹1çš„ç‰©å“é‡é‡
+c[0]:èˆ¹0çš„é™é‡
+c[1]:èˆ¹1çš„é™é‡
 */
-bool Constraint(int cw[2], int c[2]) {
-	return cw[0] < c[0] && cw[1] < c[1];
+bool Constraint(int cw[2], int c[2],int t,int n) {
+	return t<n&&cw[0] <=c[0] && cw[1] <= c[1];
 }
 
 /**
-ÊÇ·ñÂú×ã¸ÄÎÊÌâµÄ½â¾öÌõ¼þ£¬Âú×ã·µ»Øtrue,²»Âú×ã·µ»Øfalse
-Ìõ¼þ£º´¬1¿ÉÒÔ¸ºµ£µÄÆðÊ£ÓàÎïÆ·µÄÖØÁ¿
-r:Òª×°ÔÚ´¬0µÄÎïÆ·ÖØÁ¦
-c:´¬0µÄÏÞÖØ
+æ˜¯å¦æ»¡è¶³è¯¥é—®é¢˜çš„è§£å†³æ¡ä»¶ï¼Œæ»¡è¶³è¿”å›žtrue,ä¸æ»¡è¶³è¿”å›žfalse
+æ¡ä»¶ï¼šèˆ¹1å¯ä»¥è´Ÿæ‹…çš„èµ·å‰©ä½™ç‰©å“çš„é‡é‡
+r:è¦è£…åœ¨èˆ¹0çš„ç‰©å“é‡åŠ›
+c:èˆ¹0çš„é™é‡
 */
-bool Solution(int r,int c2) {
-	return r < c2;
+bool Solution(int cw[2],int c[1]) {
+	return cw[0]<=c[0]&&cw[1]<=c[1];
 }
 
 /**
-·ÇµÝ¹éµÄ»ØËÝËã·¨
-w:ÎïÆ·µÄÖØÁ¿ÁÐ±í
-bestX:×îÓÅ½â
-c:´¬0ºÍ´¬1µÄ³ÐÖØ
-n:ÎïÆ·µÄÊýÁ¿
-r:ÎïÆ·µÄ×ÜÖØ
+éžé€’å½’çš„å›žæº¯ç®—æ³•
+w:ç‰©å“çš„é‡é‡åˆ—è¡¨
+bestX:æœ€ä¼˜è§£
+c:èˆ¹0å’Œèˆ¹1çš„æ‰¿é‡
+n:ç‰©å“çš„æ•°é‡
+r:ç‰©å“çš„æ€»é‡
 */
 bool Backtrack(int w[N], int bestX[N], int c[2], int n, int r) {
 	/**
-	result:´ú±í×îºóÊÇ·ñÓÐ½â
-	       Èô³öÏÖw[2]={150,40},c[2]={100,100}µÄÇé¿ö£¬
-	       Á½´¬¿ÉÒÔ×°ÏÂÎïÆ·µÄ×ÜÖØÈ´ÎÞ·¨×°ÏÂ150ÄÇ¸öÎïÆ·£¬
-	       ÕâÖÖÇé¿öÔòÊÇÎÞ½â;
-	back:ÊÇ·ñ½øÐÐ»ØËÝµÄ±êÊ¶·û
-	     true½øÐÐ»ØËÝ
-		 false½øÐÐÉî¶ÈÓÅÏÈ±éÀú
+	result:ä»£è¡¨æœ€åŽæ˜¯å¦æœ‰è§£
+	è‹¥å‡ºçŽ°w[2]={150,40},c[2]={100,100}çš„æƒ…å†µï¼Œ
+	ä¸¤èˆ¹å¯ä»¥è£…ä¸‹ç‰©å“çš„æ€»é‡å´æ— æ³•è£…ä¸‹150é‚£ä¸ªç‰©å“ï¼Œ
+	è¿™ç§æƒ…å†µåˆ™æ˜¯æ— è§£;
+	back:æ˜¯å¦è¿›è¡Œå›žæº¯çš„æ ‡è¯†ç¬¦
+	trueè¿›è¡Œå›žæº¯
+	falseè¿›è¡Œæ·±åº¦ä¼˜å…ˆéåŽ†
 	*/
 	bool result = false,back = false;
 
 	/**
-	X:z×îÓÅ½â¾ö·½°¸
-	  0·ÅÔÚ´¬0
-	  1·ÀÖ¹´¬1
-	beseW:×îÓÅ½â£¬´Ë´¦´ú±í´¬0µÄ×î´ó³ÐÖØ
-	cw[0]:Ã÷È··ÅÔÚ´¬0µÄÎïÆ·µÄ³ÐÖØ
-	cw[1]:Ã÷È··ÅÔÚ´¬1µÄÎïÆ·µÄ³ÐÖØ
-	t:µ±Ç°ÕýÔÚ¼ÆËãµÄÎïÆ·±àºÅ
+	X:zæœ€ä¼˜è§£å†³æ–¹æ¡ˆ
+	0æ”¾åœ¨èˆ¹0
+	1é˜²æ­¢èˆ¹1
+	beseW:æœ€ä¼˜è§£ï¼Œæ­¤å¤„ä»£è¡¨èˆ¹1çš„æœ€å¤§æ‰¿é‡
+	cw[0]:æ˜Žç¡®æ”¾åœ¨èˆ¹0çš„ç‰©å“çš„æ‰¿é‡
+	cw[1]:æ˜Žç¡®æ”¾åœ¨èˆ¹1çš„ç‰©å“çš„æ‰¿é‡
+	t:å½“å‰æ­£åœ¨è®¡ç®—çš„ç‰©å“ç¼–å·
 	*/
 	int X[N] = { 0}, bestW = 0, cw[2] = { 0 },t=1;
 
-	//³öÉú»¯µÚÒ»ÎïÆ·µÄ×´Ì¬£¬·ÅÔÚ´¬0
+	//å‡ºç”ŸåŒ–ç¬¬ä¸€ç‰©å“çš„çŠ¶æ€ï¼Œæ”¾åœ¨èˆ¹0
 	X[0] = 1;
 	cw[1] += w[0];
-
+	r-=w[0];
 	while (t) {
 		if (back) {
 			cw[X[t]] -= w[t];
+			r+=w[t];
 			if (X[t]) {
-				//»»¸ö·ÖÖ§¼ÌÐøÖ´ÐÐÉî¶È±éÀú
+				//æ¢ä¸ªåˆ†æ”¯ç»§ç»­æ‰§è¡Œæ·±åº¦éåŽ†
 				back = false;
 				X[t] = 0;
-				cw[0] += w[t];			
+				cw[0] += w[t];	
+				r-=w[t];
 				t++;
 			}
 			else {
@@ -117,26 +120,28 @@ bool Backtrack(int w[N], int bestX[N], int c[2], int n, int r) {
 			}				
 		}
 		else {
-			
-			//ÈôÂú×ãÔ¼ÊøÌõ¼þºÍÏÞ½çÌõ¼þ£¬Ôò½øÐÐÉî¶È±éÀú
-			if (Constraint(cw, c) && Bound(t, n)) {
+
+			//è‹¥æ»¡è¶³çº¦æŸæ¡ä»¶å’Œé™ç•Œæ¡ä»¶ï¼Œåˆ™è¿›è¡Œæ·±åº¦éåŽ†
+			if (Constraint(cw, c,t,n) &&Bound(cw[1]+r,bestW)) {
 				X[t] = 1;
 				cw[1] += w[t];
+				r-=w[t];
 				t++;
-				//ÈôÂú×ã½â¾öÌõ¼þ£¬Ôò¶Ô¸ÃÎÊÌâ½á¹û½øÐÐ¼ÇÂ¼
-				if (Solution(r-cw[1],c[0])) {
-					//¸ÃÎÊÌâÓÐÖÁÉÙÒ»¸ö½â
+				//è‹¥æ»¡è¶³è§£å†³æ¡ä»¶ï¼Œåˆ™å¯¹è¯¥é—®é¢˜ç»“æžœè¿›è¡Œè®°å½•
+				if (t==n&&Solution(cw,c)) {
+					//è¯¥é—®é¢˜æœ‰è‡³å°‘ä¸€ä¸ªè§£
 					result = true;
-					//Èô¸Ã½ÓÓÅÓÚ×îÓÅ½â,Ôò½øÐÐ¸üÐÂ
-					//×îÓÅ½âµÄÅÐ¶Ï£¬Ê¹´¬1µÄ³ÐÖØ½ü¿ÉÄÜµÄ´ó
+					//è‹¥è¯¥æŽ¥ä¼˜äºŽæœ€ä¼˜è§£,åˆ™è¿›è¡Œæ›´æ–°
+					//æœ€ä¼˜è§£çš„åˆ¤æ–­ï¼Œä½¿èˆ¹1çš„æ‰¿é‡è¿‘å¯èƒ½çš„å¤§
 					if (cw[1] > bestW) {
-						bestW = cw[0];
+						//æ›´æ–°æœ€å¤§é‡é‡
+						bestW = cw[1];
 						for (int i = 0; i < n; i++) {
 							bestX[i] = X[i];
 						}
-					  }
+					}
 				}
-				
+
 			}
 			else {
 				t--;
@@ -148,53 +153,56 @@ bool Backtrack(int w[N], int bestX[N], int c[2], int n, int r) {
 }
 
 
+/*
+è£…è½½é—®é¢˜
+ç›®æ ‡æœ€ä¼˜è§£ï¼šä½¿èˆ¹1çš„æ‰¿é‡æœ€å¤§
+*/
 int main() {
 	/*
-	w£ºÎïÆ·ÖØÁ¿Êý×é
-	n£ºÎïÆ·µÄÊýÁ¿
-	c£ºÁ½´¬µÄÔØÖØ
-	bestX£º´¬1ÖÓÒª´æ·ÅµÄÎïÆ·
-	r£ºÊ£Óà¼¯×°ÏäÖØÁ¿
+	wï¼šç‰©å“é‡é‡æ•°ç»„
+	nï¼šç‰©å“çš„æ•°é‡
+	cï¼šä¸¤èˆ¹çš„è½½é‡
+	bestXï¼šèˆ¹1é’Ÿè¦å­˜æ”¾çš„ç‰©å“
+	rï¼šå‰©ä½™é›†è£…ç®±é‡é‡
 	*/
 	int w[N] = { 10,50,45,30,20,25,40,15,35,10 }, n, c[2] = { 150,150 }, bestX[N] = { 0 }, r = 0;
-	cout << "ÇëÊäÈëÎïÆ·µÄ×ÜÁ¿(ÊäÈë0£ºÄ¬ÈÏ·½°¸)£º" << endl;
+	cout << "è¯·è¾“å…¥ç‰©å“çš„æ€»é‡(è¾“å…¥0ï¼šé»˜è®¤æ–¹æ¡ˆ)ï¼š" << endl;
 	cin >> n;
 
-	//ÅÐ¶ÁÊÇ·ñÓÃÄ¬ÈÏ·½°¸
+	//åˆ¤è¯»æ˜¯å¦ç”¨é»˜è®¤æ–¹æ¡ˆ
 	if (n == 0) {
 		n = 10;
 		r = 280;
 	}
 	else {
-		//ÊäÈëÖØÁ¿
-		cout << "Çë°´Ë³ÐòÊäÈë¸÷ÎïÆ·µÄÖØÁ¿:" << endl;
+		//è¾“å…¥é‡é‡
+		cout << "è¯·æŒ‰é¡ºåºè¾“å…¥å„ç‰©å“çš„é‡é‡:" << endl;
 		for (int i = 0; i < n; i++) {
 			cin >> w[i];
 			r += w[i];
 		}
-		//ÊäÈëÔØÖØ
+		//è¾“å…¥è½½é‡
 		for (int i = 0; i < 2; i++) {
-			cout << "ÇëÊäÈë´¬" << i << "µÄÔØÖØ:" << endl;
+			cout << "è¯·è¾“å…¥èˆ¹" << i << "çš„è½½é‡:" << endl;
 			cin >> c[i];
 		}
 	}
 
-	//ÅÐ¶ÁÊÇ·ñ³¬ÖØ
+	//åˆ¤è¯»æ˜¯å¦è¶…é‡
 	if (r < c[0] + c[1]) {
-		//ÅÐ¶ÏÊÇ·ñÓÐ½â¾ö·½°¸
+		//åˆ¤æ–­æ˜¯å¦æœ‰è§£å†³æ–¹æ¡ˆ
 		if (Backtrack(w, bestX, c, n, r)) {
-			cout << "×îÓÅ½â¾ö·½°¸Îª: " ;
+			cout << "æœ€ä¼˜è§£å†³æ–¹æ¡ˆä¸º: " ;
 			for (int i = 0; i < n; i++) {
 				cout << bestX[i] << " ";
 			}
 		}
 		else {
-			cout << "´íÎó2:¶þ´¬ÎÞ·¨×°ÏÂÎïÆ·Çåµ¥ÀïµÄÎïÆ·" << endl;
+			cout << "é”™è¯¯2:äºŒèˆ¹æ— æ³•è£…ä¸‹ç‰©å“æ¸…å•é‡Œçš„ç‰©å“" << endl;
 		}
 	}
 	else {
-		cout << "´íÎó1:ÎïÆ·³¬ÖØ£¬¶þ´¬ÎÞ·¨×°ÏÂ" << endl;
+		cout << "é”™è¯¯1:ç‰©å“è¶…é‡ï¼ŒäºŒèˆ¹æ— æ³•è£…ä¸‹" << endl;
 	}
 	return 0;
 }
-
