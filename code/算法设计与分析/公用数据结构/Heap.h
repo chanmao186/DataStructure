@@ -16,20 +16,20 @@ public:
 	bool Insert(Type Element) {
 		if (IsFull())return false;
 		int i = ++size;
-		for (; (Date[i] < Element)==Htype; i /= 2) {
+		for (; (Element < Date[i / 2]) == Htype; i /= 2) {
 			Date[i / 2] = Date[i];
 		}
 		Date[i] = Element;
 	}
 	Type Delete() {
-		if (IsEmputy())return;
+		//if (IsEmputy())return NULL;
 		int parent = 1, child;
 		Type temp = Date[size--],
 			Item = Date[1];
 		for (; parent * 2 < size; parent = child) {
 			child = parent * 2;
 			//两个子节点中选择一个合适的
-			if ((Date[child] > Date[child + 1])==Htype) {
+			if ((Date[child] > Date[child + 1]) == Htype) {
 				child++;
 			}
 			if (temp < Date[child] == Htype) {
@@ -58,7 +58,7 @@ protected:
 };
 
 template<class Type>
-class MinHeap:public Heap<Type>
+class MinHeap :public Heap<Type>
 {
 public:
 	MinHeap(int capacity) : Heap<Type>(capacity) {

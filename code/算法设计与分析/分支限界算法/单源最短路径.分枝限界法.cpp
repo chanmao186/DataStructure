@@ -3,7 +3,9 @@
 using namespace std;
 #define N 20
 int dist[N];
-char Node[N] = "SABCDEFGHIJKLT";
+int pre[N] = { 0 };
+char Node[N] = "SABCDEFGHIT";
+int X[N];
 //创建邻接矩阵
 int c[N][N] = {
 	//s    a   b   c   d   e   f   g   h   i   t
@@ -20,7 +22,7 @@ int c[N][N] = {
 };
 class node {
 public:
-	node(int Weight,int Index) {
+	node(int Weight, int Index) {
 		this->Weight = Weight;
 		this->Index = Index;
 	}
@@ -37,7 +39,7 @@ public:
 	}
 
 	void operator =(int Weight) {
-		this->Weight=Weight;
+		this->Weight = Weight;
 	}
 	int Weight;
 	int Index;
@@ -50,19 +52,33 @@ void Initalize() {
 int main() {
 	Initalize();
 	MinHeap<node> H(1000);
-	node temp(0,0);
+	node temp(0, 0);
 	//先将起始点S压如小顶堆
 	H.Insert(temp);
-	int i,n=10;
+	int i, n = 11;
 	while (true) {
 		if (H.IsEmputy())break;
 		temp = H.Delete();
-		for (int i = 1; i < n; i++) {
+		for (i = 1; i < n; i++) {
 			if (c[temp.Index][i] > 0 && c[temp.Index][i] < MAX && temp.Weight + c[temp.Index][i] < dist[i]) {
-
-			 }
+				dist[i] = temp.Weight + c[temp.Index][i];
+				pre[i] = temp.Index;
+				H.Insert(node(dist[i],i));
+			}
 		}
 	}
+	int num = n - 1;
+	cout << "最小花费为:" << dist[num] << endl;
+	cout << "最短路径为:" << endl;
 	
+	i = 0;
+	for(i=0;num;i++,num=pre[num]){
+		X[i] = num;					
+	}
+	i++;
+	while (--i) {
+		cout << Node[X[i]] << " -> ";
+	}	
+	cout << Node[X[i]] << endl;
 	return 0;
 }
