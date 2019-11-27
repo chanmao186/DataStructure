@@ -14,7 +14,7 @@ public:
 		Date[0] = MIN;
 	}
 	bool Insert(Type Element) {
-		if (IsFull)return;
+		if (IsFull())return false;
 		int i = ++size;
 		for (; (Date[i] < Element)==Htype; i /= 2) {
 			Date[i / 2] = Date[i];
@@ -22,7 +22,7 @@ public:
 		Date[i] = Element;
 	}
 	Type Delete() {
-		if (IsEmputy)return;
+		if (IsEmputy())return;
 		int parent = 1, child;
 		Type temp = Date[size--],
 			Item = Date[1];
@@ -56,6 +56,7 @@ protected:
 	//堆得属性，默认为小顶堆
 	bool Htype;
 };
+
 template<class Type>
 class MinHeap:public Heap<Type>
 {
