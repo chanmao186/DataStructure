@@ -10,7 +10,7 @@ int G[N][N] = {
 		{4,10,20,0}
 };
 int n;
-//0´ú±íÎ´È¥´Ë³ÇÊĞ £¬1´ú±íÒÑÈ¥´Ë³ÇÊĞ
+//0ä»£è¡¨æœªå»æ­¤åŸå¸‚ ï¼Œ1ä»£è¡¨å·²å»æ­¤åŸå¸‚
 int CityFlag[N] = { 0 };
 int BestCost = MAX;
 int BestX[N];
@@ -25,7 +25,7 @@ bool Constraint(int c) {
 }
 
 /**
-t´ú±íÒªÈ¥µÚ¼¸¸ö³ÇÊĞ³ÇÊĞ
+tä»£è¡¨è¦å»ç¬¬å‡ ä¸ªåŸå¸‚åŸå¸‚
 */
 void Backtrack(int t, int cc) {
 	if (Bound(cc)) {
@@ -61,15 +61,16 @@ int main(void) {
 	n = 4;
 	Backtrack(0, 0);
 	if (BestCost == MAX) {
-		cout << "ÎŞ»ØÂ·";
+		cout << "æ— å›è·¯";
 	}
 	else {
-		cout << "×îĞ¡»¨·ÑÎª:" << BestCost << endl;
-		cout << "·½°¸Â·¾¶Îª:" << endl;
+		cout << "æœ€å°èŠ±è´¹ä¸º:" << BestCost << endl;
+		cout << "æ–¹æ¡ˆè·¯å¾„ä¸º:" << endl;
 		cout << BestX[0];
 		for (int i = 1; i < n+1; i++) {
 			cout << " -> " << BestX[i];
 		}
+		cout<<endl;
 	}
 	return 0;
 }
