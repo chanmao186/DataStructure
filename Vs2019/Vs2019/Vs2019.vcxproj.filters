@@ -111,6 +111,24 @@
     <ClCompile Include="..\..\code\CCF_CSP\201909.04.推荐系统.cpp">
       <Filter>源文件\CCF-CSP</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\201909.04.推荐系统_test.cpp">
+      <Filter>源文件\CCF-CSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\test.cpp">
+      <Filter>源文件\CCF-CSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\201909.05.城市规划.cpp">
+      <Filter>源文件\CCF-CSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\201909.05.城市规划_1.cpp">
+      <Filter>源文件\CCF-CSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\201903.01.小中大.cpp">
+      <Filter>源文件\CCF-CSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\201903.02.二十四点.cpp">
+      <Filter>源文件\CCF-CSP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">
