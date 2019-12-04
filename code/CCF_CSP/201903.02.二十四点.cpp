@@ -1,5 +1,5 @@
 #include<iostream>
-#include<stack>
+#include<queue>
 using namespace std;
 
 int main() {
@@ -8,8 +8,8 @@ int main() {
 	int n, result = 24, c, temp;
 	char cop;
 	cin >> n;
-	stack<int> ns;
-	stack<char> cs;
+	queue<int> ns;
+	queue<char> cs;
 	for (int i = 0, j; i < n; i++) {
 		c = 0;
 		for (j = 0; j < 3; j++) {
@@ -29,19 +29,22 @@ int main() {
 				cs.push(op[j]);
 			}
 		}
-		c = num[3];
-		while (!ns.empty()) {
-			temp = ns.top();
-			cop = cs.top();
+		ns.push(num[3]);
+		c = ns.front();
+		ns.pop();
+		while (!cs.empty()) {
+			temp = ns.front();
+			cop = cs.front();
 			if (cop == '+') {
 				c += temp;
 			}
 			else {
-				c = temp - c;
+				c-=temp;
 			}
 			ns.pop();
 			cs.pop();
 		}
+		//cout<<c<<endl;
 		if (c == result) {
 			cout << "Yes" << endl;
 		}
