@@ -10,8 +10,8 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		cin >> c[i];
 	}
-	Max = Min = Mid = c[0];
-	if (n&&n % 2) {
+	//WMax = Min = Mid = c[0];
+	if (n % 2) {
 		Mid = c[n / 2];
 	}
 	else {
@@ -26,8 +26,8 @@ int main() {
 		Max = c[n - 1];
 		Min = c[0];
 	}
-	if(n % 2)
-	    cout << Max << " " << Mid << " " << Min;
+	if(n % 2||c[n / 2] + c[n / 2 - 1])%2==0)
+		cout << Max << " " << Mid << " " << Min;
 	else {
 		cout << Max << " " << Mid << ".5 " << Min;
 	}
