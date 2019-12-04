@@ -26,7 +26,7 @@ int main() {
 		Max = c[n - 1];
 		Min = c[0];
 	}
-	if(n % 2||c[n / 2] + c[n / 2 - 1])%2==0)
+	if(n % 2||(c[n / 2] + c[n / 2 - 1])%2==0)
 		cout << Max << " " << Mid << " " << Min;
 	else {
 		cout << Max << " " << Mid << ".5 " << Min;
