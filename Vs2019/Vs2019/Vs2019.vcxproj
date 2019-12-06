@@ -123,7 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\code\CCF_CSP\201903.01.小中大.cpp" />
+    <ClCompile Include="..\..\code\CCF_CSP\0-1背包.分支限界法.cpp" />
+    <ClCompile Include="..\..\code\CCF_CSP\201903.01.小中大.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\code\CCF_CSP\201903.02.二十四点.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>

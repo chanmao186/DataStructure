@@ -129,6 +129,9 @@
     <ClCompile Include="..\..\code\CCF_CSP\201903.02.二十四点.cpp">
       <Filter>源文件\CCF-CSP</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\0-1背包.分支限界法.cpp">
+      <Filter>源文件\算法分析与设计</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">

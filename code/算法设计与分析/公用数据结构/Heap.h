@@ -29,7 +29,7 @@ public:
 		for (; parent * 2 < size; parent = child) {
 			child = parent * 2;
 			//两个子节点中选择一个合适的
-			if ((Date[child] > Date[child + 1]) == Htype) {
+			if ((Date[child] < Date[child + 1]) == !Htype) {
 				child++;
 			}
 			if (temp < Date[child] == Htype) {
