@@ -123,11 +123,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\code\CCF_CSP\0-1背包.分支限界法.cpp" />
+    <ClCompile Include="..\..\code\CCF_CSP\0-1背包.分支限界法.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\201812.04.数据中心.Prim.cpp" />
+    <ClCompile Include="..\..\code\CCF_CSP\201812.04.数据中心kruskal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\code\CCF_CSP\201903.01.小中大.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\code\CCF_CSP\201903.02.二十四点.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\201903.04.消息响应系统.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\code\CCF_CSP\201909.01.小明种苹果.cpp">
