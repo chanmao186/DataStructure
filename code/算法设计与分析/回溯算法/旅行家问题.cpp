@@ -38,7 +38,7 @@ void Backtrack(int t, int cc) {
 						BestX[i] = CX[i];
 					}
 				}
-				cc -= G[t][0];
+				//cc -= G[t][0];
 			}
 		}
 		else {
