@@ -144,6 +144,9 @@
     <ClCompile Include="..\..\code\算法设计与分析\分支限界算法\旅行商问题.分支限界法.cpp">
       <Filter>源文件\算法分析与设计</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\CCF_CSP\201812.03.CIDR合并.cpp">
+      <Filter>源文件\CCF-CSP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">

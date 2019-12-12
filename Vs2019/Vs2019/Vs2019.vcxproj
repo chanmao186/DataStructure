@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\CCF_CSP\201812.03.CIDR合并.cpp" />
     <ClCompile Include="..\..\code\CCF_CSP\201812.04.数据中心.Prim.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
