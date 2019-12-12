@@ -1,6 +1,6 @@
 #include<iostream>
 //工程文件里引用的头文件，可以按需求自行更改
-#include"../算法设计与分析/公用数据结构/Heap.h"
+#include"../公用数据结构/Heap.h"
 #include <algorithm>
 #include <vector>
 using namespace std;
