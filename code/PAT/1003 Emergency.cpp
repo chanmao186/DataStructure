@@ -6,6 +6,7 @@ using namespace std;
 const int Max = 0x7fffffff;
 int G[N][N] = { 0 };
 int mens[N] = { 0 };//各个城市救援人员的数量
+int path[N] = { 0 };//用来记录最短路径的数量
 
 
 struct Node {
@@ -26,7 +27,7 @@ int main() {
 	}
 	for (i = 0; i < n; i++) {
 		cin >> mens[i];
-		dist[i].mens = mens[i];
+		//dist[i].mens = mens[i];
 	}
 	for (i = 0; i < m; i++) {
 		cin >> x >> y >> w;
@@ -36,44 +37,54 @@ int main() {
 		dist[i].weight = G[c1][i];
 	}
 	dist[c1].flag = true;
-	int cc = c1, nc = 0; //cc当前节点，nc下一个要去的节点
+	int  nc = 0; //cc当前节点，nc下一个要去的节点
 	int weight, men;
-	for (w = 1; w < n; w++) {
-		x = Max;
-		y = 0;
-		//寻找一个最小的节点
+
+	if (n == 0) {
+		cout << "0 0" << endl;
+	}
+	else if (c1 == c2) {
+		cout << "1 " << mens[c1];//自己到自己为1
+	}
+	else {
 		for (i = 0; i < n; i++) {
-			if (!dist[i].flag && x >= G[cc][i]) {
-				if (x > G[cc][1]) {
-					x = G[cc][i];
+			dist[i].weight = G[c1][i];
+			if (G[c1][i] != Max) {
+				dist[i].mens = mens[i] + mens[c1];
+			}
+			path[i] = 1;
+
+		}
+		for (w = 1; w < n; w++) {
+			x = Max;
+			//寻找一个最小的节点
+			for (i = 0; i < n; i++) {
+				if (!dist[i].flag && x > dist[i].weight) {
+					x = dist[i].weight;
 					nc = i;
-					y = dist[i].mens;
 				}
-				else {
-					if (dist[i].mens > y) {
-						x = G[cc][i];
-						nc = i;
-						y = dist[i].mens;
+			}
+			dist[nc].flag = true;
+			if (nc == c2)break;
+			for (i = 0; i < n; i++) {
+				if ((G[nc][i] != Max) && (!dist[i].flag)) {
+					weight = G[nc][i] + dist[nc].weight;
+					men = mens[i] + dist[nc].mens;
+					if (dist[i].weight > weight ) {
+						dist[i].weight = weight;
+						dist[i].mens = men;
+						path[i] = path[nc];
+					}
+					else if (dist[i].weight == weight) {
+						dist[i].mens = max(men,dist[i].mens);
+						path[i] += path[nc];
 					}
 				}
-
 			}
 		}
-		dist[nc].flag = true;
-		if (nc == c2)break;
-		for (i = 0; i < n; i++) {
-			if ((G[nc][i] != Max) && (!dist[i].flag)) {
-				weight = G[nc][i] + dist[nc].weight;
-				men = mens[i] + dist[nc].mens;
-				if (dist[i].weight < weight || (dist[i].weight == weight || men > dist[i].mens)) {
-					dist[i].weight = weight;
-					dist[i].mens = men;
-				}				
-			}
-		}
-		cc = nc;
+		cout << path[c2] << " " << dist[c2].mens;
 	}
-	cout << dist[c2].weight << " " << dist[c2].mens + mens[c2];
+
 	return 0;
 }
 
