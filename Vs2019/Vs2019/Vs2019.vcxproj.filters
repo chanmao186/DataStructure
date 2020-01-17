@@ -165,6 +165,12 @@
     <ClCompile Include="..\..\code\PAT\1005 Spell It Right.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1006 Sign In and Sign Out.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1007 Maximum Subsequence Sum.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">

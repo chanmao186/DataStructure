@@ -201,7 +201,13 @@
     <ClCompile Include="..\..\code\PAT\1004 Counting Leaves.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\code\PAT\1005 Spell It Right.cpp" />
+    <ClCompile Include="..\..\code\PAT\1005 Spell It Right.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1006 Sign In and Sign Out.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1007 Maximum Subsequence Sum.cpp" />
     <ClCompile Include="..\..\code\PAT\AVLTree.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
