@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-	set<int> s;
+	/*set<int> s;
 	vector<int> v;
 	unordered_map<int, set<int>::iterator> m;
 	m[5] = s.insert(5).first;
@@ -26,6 +26,10 @@ int main() {
 	}
 	for (auto& i : s) {
 		cout << i << " ";
+	}		  */
+	vector<int> a;
+	for (auto x : a) {
+		cout << x;
 	}
 	return 0;
 }
