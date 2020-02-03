@@ -201,6 +201,15 @@
     <ClCompile Include="..\..\code\PAT\1017 Queueing at Bank.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1018 Public Bike Management.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1019 General Palindromic Number.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1020 Tree Traversals.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">
