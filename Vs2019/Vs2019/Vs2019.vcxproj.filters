@@ -22,6 +22,12 @@
     <Filter Include="源文件\CCF-CSP">
       <UniqueIdentifier>{ac1555f6-423b-412e-be65-1637c3b51d13}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\网络攻击与防御">
+      <UniqueIdentifier>{a48a5b0b-b167-49b2-9902-6d470973b413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\编译原理">
+      <UniqueIdentifier>{65b102a0-55b1-4d51-aeb7-2b054056a83c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\算法设计与分析\动态规划\0-1背包.动态规划.new.cpp">
@@ -209,6 +215,12 @@
     </ClCompile>
     <ClCompile Include="..\..\code\PAT\1020 Tree Traversals.cpp">
       <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\网络攻击与防御\栈溢出过程跟踪.cpp">
+      <Filter>源文件\网络攻击与防御</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\编译原理\词法分析.cpp">
+      <Filter>源文件\编译原理</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
