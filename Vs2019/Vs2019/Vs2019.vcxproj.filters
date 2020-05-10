@@ -222,6 +222,24 @@
     <ClCompile Include="..\..\code\编译原理\词法分析.cpp">
       <Filter>源文件\编译原理</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\编译原理\语法分析.LL(1)算法.cpp">
+      <Filter>源文件\编译原理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\20200512.1.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\7-2 三阶幸福数.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\7-3 垃圾分类.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1021 Deepest Root.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1022 Digital Library.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">

@@ -1,86 +1,87 @@
 #include<iostream>
+#include<queue>
+#include<vector>
 using namespace std;
 #define N 40
-typedef TreeNode* Tree;
+typedef struct TreeNode* Tree;
 struct TreeNode
 {
 	int Weight;
 	Tree Left;
 	Tree Right;
 };
-
+vector<int> result;
 bool flag[N] = { false };
 int inOrder[N];
 int PostOrder[N];
 int n;
-int getInPosition(int num) {
-	for (int i = 0; i < N; i++) {
-		if (inOrder[i] == num) {
-			return i;
+
+int GetPosInInOrder(int s, int e,int value) {
+	int mid;
+	for (mid = s; mid < e; mid++) {
+		if (inOrder[mid] == value) {
+			return mid;
 		}
 	}
-	return 0;
+	return -1;
 }
 
-int getPostPosition(int num) {
-	for (int i = 0; i < N; i++) {
-		if (PostOrder[i] == num) {
-			return i;
+//创建一个树
+//ps先序的开始位置
+Tree CreateTree(int ps, int pe, int is, int ie) {
+	if (pe == ps)return NULL;
+	Tree tree = (Tree)malloc(sizeof(TreeNode));
+	tree->Weight = PostOrder[pe - 1];
+	int mid = GetPosInInOrder(is, ie, tree->Weight);
+	tree->Left = CreateTree(ps, ps + (mid - is), is, mid);
+	tree->Right = CreateTree(ps + (mid - is), pe - 1, mid + 1, ie);
+	return tree;
+}
+
+void OutPut(Tree tree) {
+	queue<Tree> tq;
+	tq.push(tree);
+	while (!tq.empty())
+	{
+		tree = tq.front();
+		result.push_back(tree->Weight);
+		if (tree->Left != NULL) {
+			tq.push(tree->Left);
 		}
-	}
-	return 0;
-}
-int getLeftNum(int pos) {
-	int num = 0;
-	for (int i = pos - 1; i >= 0 && !flag[i]; i--) {
-		num++;
-	}
-	return num;
-}
-int getRighttNum(int pos) {
-	int num = 0;
-	for (int i = pos + 1; i < n && !flag[i]; i++) {
-		num++;
-	}
-	return num;
-}
-
-Tree CreateTree(int w) {
-	Tree temp = (Tree)malloc(sizeof(TreeNode));
-	temp->Weight = w;
-	int left, right, ipos, ppost;//获取左右子女的数量
-	ppost = getPostPosition(w);
-	ipos = getInPosition(w);
-	left = getLeftNum(ipos);
-	right = getRighttNum(ipos);
-	flag[ipos] = true;
-	if (left != 0) {
-		temp->Left = CreateTree(ppost - right-1);
-	}
-	else {
-		temp->Left = NULL;
+		if (tree->Right != NULL) {
+			tq.push(tree->Right);
+		}
+		tq.pop();
 	}
 
-	if (right != 0) {
-		temp->Right = CreateTree(ppost -1);
+	if (result.size() > 0) {
+		cout << result[0];
 	}
-	else {
-		temp->Right = NULL;
+
+	for (int i = 1; i < result.size(); i++) {
+		cout << " " << result[i];
 	}
 }
 int main() {
-	int n, i;
+	int i;
+	cin >> n;
 	for (i = 0; i < n; i++) {
 		cin >> PostOrder[i];
 	}
 	for (i = 0; i < n; i++) {
 		cin >> inOrder[i];
 	}
-	Tree temp = CreateTree(PostOrder[n - 1]);
+	Tree tree = CreateTree(0, n, 0, n);
+	OutPut(tree);
 	return  0;
 }
 /*
 总结：
 1.没读好题，分清层次遍历和后序中序遍历，posts是后呀！！
 2.做题前在纸上理清思路后面就很好写了
+案例：
+7
+2 3 1 5 7 6 4
+1 2 3 4 5 6 7
+
 */
