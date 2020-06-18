@@ -240,6 +240,15 @@
     <ClCompile Include="..\..\code\PAT\1022 Digital Library.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\编译原理\中间代码生成.cpp">
+      <Filter>源文件\网络攻击与防御</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\编译原理\伪代码.cpp">
+      <Filter>源文件\编译原理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1023 Have Fun with Numbers.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">

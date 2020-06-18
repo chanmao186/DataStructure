@@ -254,7 +254,10 @@
     <ClCompile Include="..\..\code\PAT\1021 Deepest Root.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\code\PAT\1022 Digital Library.cpp" />
+    <ClCompile Include="..\..\code\PAT\1022 Digital Library.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1023 Have Fun with Numbers.cpp" />
     <ClCompile Include="..\..\code\PAT\20200512.1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -362,6 +365,12 @@
     </ClCompile>
     <ClCompile Include="..\..\code\算法设计与分析\贪心算法\哈夫曼数.贪心算法.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\code\编译原理\中间代码生成.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\code\编译原理\伪代码.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\code\编译原理\词法分析.cpp">
