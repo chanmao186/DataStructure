@@ -281,6 +281,7 @@
     <ClCompile Include="..\..\code\PAT\1029 Median.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1030 Travel Plan.cpp" />
     <ClCompile Include="..\..\code\PAT\20200512.1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
