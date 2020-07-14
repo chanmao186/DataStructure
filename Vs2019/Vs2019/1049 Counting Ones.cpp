@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int mradixin() {
+int main() {
 	int num, left, right, now, radix=1,res=0;
 	cin >> num;
 	
