@@ -381,6 +381,24 @@
     <ClCompile Include="..\..\code\1060 Are They Equal.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1108 Finding Average.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1109 Group Photo.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1110 Complete Binary Tree.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="1111 Online Map.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="1100 Mars Numbers.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="1101 Quick Sort.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">
