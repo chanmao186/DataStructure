@@ -399,6 +399,75 @@
     <ClCompile Include="1101 Quick Sort.cpp">
       <Filter>源文件\PAT</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1092 To Buy or Not to Buy.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1093 Count PAT%27s .cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1112 Stucked Keyboard.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1113 Integer Set Partition.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1114 Family Property.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="1069 The Black Hole of Numbers.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="1070 Mooncake.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1072 Gas Station.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1071 Speech Patterns.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1073 Scientific Notation.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1074 Reversing Linked List.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1075 PAT Judge.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1076 Forwards on Weibo.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1077 Kuchiguse.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1078 Hashing.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1080 Graduate Admission.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1082 Read Number in Chinese.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1083 List Grades.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1084 Broken Keyboard.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1085 Perfect Sequence.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1086 Tree Traversals Again.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="1091 Acute Stroke.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1095 Cars on Campus.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\算法设计与分析\公用数据结构\Heap.h">
