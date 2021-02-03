@@ -28,6 +28,9 @@
     <Filter Include="源文件\编译原理">
       <UniqueIdentifier>{65b102a0-55b1-4d51-aeb7-2b054056a83c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\LeetCode">
+      <UniqueIdentifier>{0bdb6ca8-72a9-4bbd-83aa-a26c14a5e559}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\算法设计与分析\动态规划\0-1背包.动态规划.new.cpp">
@@ -467,6 +470,36 @@
     </ClCompile>
     <ClCompile Include="..\..\code\PAT\1095 Cars on Campus.cpp">
       <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="1058 A+B in Hogwarts.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1039 Course List for Student.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1061 Dating.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\PAT\1103 Integer Factorization.cpp">
+      <Filter>源文件\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="rotate.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="指针.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="1232. 缀点成线.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="7. 整数反转.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="4. 寻找两个正序数组的中位数.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="424. 替换后的最长重复字符.cpp">
+      <Filter>源文件\LeetCode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
