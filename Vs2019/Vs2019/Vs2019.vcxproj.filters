@@ -31,6 +31,9 @@
     <Filter Include="源文件\LeetCode">
       <UniqueIdentifier>{0bdb6ca8-72a9-4bbd-83aa-a26c14a5e559}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\米哈游">
+      <UniqueIdentifier>{56821e65-5aa7-4a41-9de3-6429a565cf56}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\算法设计与分析\动态规划\0-1背包.动态规划.new.cpp">
@@ -500,6 +503,24 @@
     </ClCompile>
     <ClCompile Include="424. 替换后的最长重复字符.cpp">
       <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="5. 最长回文子串.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="18.4Sum.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="20.Valid Parentheses.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="25.K 个一组翻转链表.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="395.Longest Substring with At Least K Repeating Characters.cpp">
+      <Filter>源文件\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="m2.cpp">
+      <Filter>源文件\米哈游</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
